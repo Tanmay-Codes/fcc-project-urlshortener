@@ -40,8 +40,8 @@ app.post("/api/shorturl", function (req, res) {
 });
 app.get("/api/shorturl/:url", function (req, res) {
   const url = req.params.url;
-  console.log(url);
-  const redirectUrl = urlData.filter((items) => items.shortUrl == url)[0]
+
+  const redirectUrl = urlData.filter((items) => items.short_url == url)[0]
     .original_url;
   res.redirect(redirectUrl);
 });
